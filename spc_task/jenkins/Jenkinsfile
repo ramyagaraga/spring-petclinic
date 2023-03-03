@@ -1,0 +1,12 @@
+---
+node {
+    stage('vcs')
+    {
+        git 'https://github.com/ramyagaraga/spring-petclinic.git'
+    }
+    stage('Build')
+    { 
+        sh "./mvnw package "
+
+    }
+}
