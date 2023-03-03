@@ -1,14 +1,17 @@
-node('node1') {
+pipeline {
+    agent { lable 'node1'} 
+    stages {
+        stage('vcs') { 
+            steps {
+                git url: 'https://github.com/ramyagaraga/spring-petclinic.git',
+                    branch: 'main'
 
-    stage('vcs')
-    {
-        git url: 'https://github.com/ramyagaraga/spring-petclinic.git',
-            branch: 'main'
-
-    }
-    stage('Build')
-    { 
-        sh './mvnw package'
-        
+            }
+        }
+        stage('Build') { 
+            steps {
+                sh './mvnw package'
+            }
+        }
     }
 }
