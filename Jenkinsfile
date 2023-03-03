@@ -1,4 +1,4 @@
-node(node1) {
+node('node1') {
 
     stage('vcs')
     {
