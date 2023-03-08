@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'node1'} 
-    triggers { pollscm ('* * * * *') } 
+    triggers { pollSCM ('* * * * *') } 
     parameters {
         choice(name: 'MAVEN_GOAL', choices: ['package', 'install', 'clean'], description: 'Maven Goal')
     }
@@ -18,10 +18,9 @@ pipeline {
             }
         } 
         stage('sonal analysis') {
-            steps { 
-                "withSonarQubeEnv(<Name of server configured in jenkins>)" 
-                     withSonarQubeEnv('sonar') {
-                         sh 'mvn clean package sonar:sonar -Dsonar.organization=sonar-ramya'
+            steps {  
+                withSonarQubeEnv('sonar') {
+                    sh 'mvn clean package sonar:sonar -Dsonar.organization=sonar-ramya'
                      } 
 
             }
