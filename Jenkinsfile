@@ -19,7 +19,7 @@ pipeline {
         } 
         stage('sonal analysis') {
             steps { 
-                "withSonarQubeEnv(<Name of server configured in jenkins)" 
+                "withSonarQubeEnv(<Name of server configured in jenkins>)" 
                      withSonarQubeEnv('sonar') {
                          sh 'mvn clean package sonar:sonar -Dsonar.organization=sonar-ramya'
                      } 
