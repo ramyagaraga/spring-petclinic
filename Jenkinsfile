@@ -1,4 +1,4 @@
-//this is for demo
+//this is for jenkins project 
 pipeline {
     agent { label 'node1'} 
     stages {
