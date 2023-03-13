@@ -1,5 +1,3 @@
-//this is for jenkins project
-//hufff
 pipeline {
     agent { label 'node1'} 
     stages {
