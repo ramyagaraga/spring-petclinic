@@ -4,13 +4,8 @@ pipeline {
         stage('vcs') { 
             steps {
                 git url: 'https://github.com/ramyagaraga/spring-petclinic.git',
-                    branch: 'main'
+                    branch: 'developti'
 
-            }
-        }
-        stage('Build') { 
-            steps {
-                sh './mvnw package'
             }
         }
     }
